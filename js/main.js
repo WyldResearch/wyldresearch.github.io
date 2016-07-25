@@ -9,7 +9,8 @@ $(function() {
   // sticky menu 
 
   $(window).bind('scroll', function () {
-    var breakpoint = $(window).height() - 120; // 120 = navbar-height
+    //var breakpoint = $(window).height() - 120; // 120 = navbar-height
+    var breakpoint = $(window).height()/3;
 
     if ($(window).scrollTop() > breakpoint) {
         navbar.addClass('scrolled');
@@ -43,7 +44,7 @@ $(function() {
   smoothScroll.init({
     selector: '[data-scroll]', // Selector for links (must be a valid CSS selector)
     selectorHeader: '[data-scroll-header]', // Selector for fixed headers (must be a valid CSS selector)
-    speed: 500, // Integer. How fast to complete the scroll in milliseconds
+    speed: 750, // Integer. How fast to complete the scroll in milliseconds
     easing: 'easeInOutCubic', // Easing pattern to use
     offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
     updateURL: true, // Boolean. If true, update the URL hash on scroll
@@ -73,6 +74,13 @@ $(function() {
   // }).on('afterChange', function(event, slick, direction){
   //   console.log(direction);
   // });
+
+  // nav
+  console.log('hello?');
+  $('#topbar a').on('click', function(){
+    console.log('hello');
+    $('#navbar').collapse('hide');
+  });
 });
 
 /*

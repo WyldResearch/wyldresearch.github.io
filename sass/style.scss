@@ -85,7 +85,7 @@ ul {
 		font-size: 25px;
 
 		@media (min-width: $screen-sm-min){
-			padding: 60px 0;
+			// padding: 60px 0;
 			font-size: 28px;
 		}
 
@@ -173,21 +173,21 @@ ul {
 				text-transform: uppercase;
 				color: white;
 				font-weight: 300;
-				letter-spacing: 1px;
+				letter-spacing: 2px;
 				transition: all 0.1s linear;
 				
-				padding-left: 10px;
-				padding-right: 10px;
+				padding-left: 12px;
+				padding-right: 12px;
 
 				@media (min-width: 800px){
-					padding-left: 14px;
-					padding-right: 14px;
+					// padding-left: 12px;
+					// padding-right: 12px;
+					// letter-spacing: 2px;
 				}
 				
 				@media (min-width: $screen-md-min){
 					padding-left: 25px;
 					padding-right: 25px;
-					letter-spacing: 2px;
 				}
 
 				&:hover,
@@ -210,7 +210,6 @@ ul {
 }
 
 .navbar-collapse {
-	//transition: background-color 0.2s easeOut;
 	
 	.close {
 		display: none;
@@ -240,10 +239,20 @@ ul {
 			display: block;
 			position: absolute;
 			top: 44px;
-		    right: 30px;
+		    right: 41px;
 		    color: $gray-lighter;
 		    font-size: 30px;
 		    opacity: 1;
+		}
+
+		ul.navbar-nav {
+			li {
+				a {
+					// mobile nav opened
+					padding-top: 15px !important;
+					padding-bottom: 15px !important;
+				}
+			}
 		}
 	}
 	
@@ -252,15 +261,21 @@ ul {
 
     	li {
 			a {
-				letter-spacing: 3px;
-				padding-top: 12px;
-				padding-bottom: 12px;
+				// padding-top: 15px;
+				// padding-bottom: 15px;
+
+				&:hover,
+				&:active,
+				&:focus {
+					color: white;
+				}
 			}
     	}
     }
 }
 
 #topbar {
+	// short navbar when page is scrolled
 	&.scrolled {
 		transition: all 0.2s linear;
 		background: $gray-darker;
@@ -279,18 +294,28 @@ ul {
 			}
 		}
 
-		ul.nav li a {
-			padding-top: 20px;
-			padding-bottom: 20px;
-		}
-
 		.navbar-toggle {
 			margin-top: 18px;
 			margin-bottom: 18px;
 		}
+		
+		ul.navbar-nav {
+	    	margin: 0;
 
-		.navbar-collapse.in .close {
-			top: 18px;
+	    	li {
+				a {
+					// please don't change this
+					padding-top: 25px;
+					padding-bottom: 25px;
+				}
+			}
+		}
+
+		// mobile nav opened
+		.navbar-collapse.in {
+			.close {
+				//top: 20px;
+			}
 		}
 	}
 }
@@ -664,7 +689,7 @@ $flex-gutter-width: 25px;
 		}
 
 		.logo-innovate {
-			width: 125px;
+			width: 150px;
 		}
 
 		.logo-underground {
@@ -673,7 +698,7 @@ $flex-gutter-width: 25px;
 
 		@media (min-width: $screen-sm-min){
 			.logo-innovate {
-				width: 250px;
+				width: 300px;
 			}
 
 			.logo-underground {
