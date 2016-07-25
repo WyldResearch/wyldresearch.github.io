@@ -1,0 +1,3 @@
+@mixin trans($attribute){
+	transition: $attribute 0.25s ease;
+}

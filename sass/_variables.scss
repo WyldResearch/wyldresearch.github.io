@@ -1,0 +1,53 @@
+// Wyld Colors
+$purple:					#5c2f8e; // rgb(92,47,142)
+$violet:					#8F459A; // rgb(143,69,154) // intermediate color
+$pink:						#c356a0; // rgb(195,86,160)
+
+// Colors
+$brand-primary:         	$violet;
+
+$link-color:            	$brand-primary;
+$link-hover-color:      	lighten($brand-primary, 15%);
+$link-hover-decoration: 	none;
+
+// Typography
+
+$font-family-sans-serif:  	"Work Sans", Helvetica, Arial, sans-serif !default;
+$font-size-base:          	14px !default;
+$font-size-large:         	ceil(($font-size-base * 1.1));
+$font-weight-base:			300; // custom
+
+$font-size-h1:            	floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            	floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            	ceil(($font-size-base * 1.7)) !default; // ~24px
+
+$line-height-base:        	1.5;
+$line-height-computed:    	floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+// Navs
+
+// $nav-link-padding:          10px 20px;
+
+//== Navbar
+
+$navbar-height:             120px !default;
+
+//== Media queries breakpoints
+
+//== Grid system
+
+$grid-gutter-width:         50px !default;
+
+//== Components
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+
+// Wyld Custom Variables
+
+$dark-bg-color:				#222; // footer, topbar 
+

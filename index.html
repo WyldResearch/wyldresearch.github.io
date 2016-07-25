@@ -1,52 +1,489 @@
 <!DOCTYPE html>
-<html>
-
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Wyld Research : ">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wyld</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta rel="canonical">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <title>Wyld Mesh</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700" rel="stylesheet">
+
   </head>
-
   <body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <!-- MODAL: Terms & Conditions -->
+
+
+    <div class="modal fade" tabindex="-1" id="terms">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">
+              <i class="fa fa-times-circle"></i>
+            </span></button>
+            <h3 class="modal-title">Terms and Conditions</h3>
+          </div>
+          <div class="modal-body">
+            <h4>Lorem ipsum dolor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt dolore itaque, ratione recusandae assumenda minus! Animi quaerat autem incidunt minima, inventore ratione id, magnam ducimus error voluptatibus. Expedita, ratione.</p>
+            <h4>Lorem ipsum dolor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt dolore itaque, ratione recusandae assumenda minus! Animi quaerat autem incidunt minima, inventore ratione id, magnam ducimus error voluptatibus. Expedita, ratione.</p>
+            <h4>Lorem ipsum dolor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt dolore itaque, ratione recusandae assumenda minus! Animi quaerat autem incidunt minima, inventore ratione id, magnam ducimus error voluptatibus. Expedita, ratione.</p>
+            <h4>Lorem ipsum dolor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt dolore itaque, ratione recusandae assumenda minus! Animi quaerat autem incidunt minima, inventore ratione id, magnam ducimus error voluptatibus. Expedita, ratione.</p>
+            <h4>Lorem ipsum dolor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt dolore itaque, ratione recusandae assumenda minus! Animi quaerat autem incidunt minima, inventore ratione id, magnam ducimus error voluptatibus. Expedita, ratione.</p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <!-- MODAL: Privacy Policy -->
+
+
+    <div class="modal fade" tabindex="-1" id="privacy">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">
+              <i class="fa fa-times-circle"></i>
+            </span></button>
+            <h3 class="modal-title">Privacy Policy</h3>
+          </div>
+          <div class="modal-body">
+            <h4>Lorem ipsum dolor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt dolore itaque, ratione recusandae assumenda minus! Animi quaerat autem incidunt minima, inventore ratione id, magnam ducimus error voluptatibus. Expedita, ratione.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt dolore itaque, ratione recusandae assumenda minus! Animi quaerat autem incidunt minima, inventore ratione id, magnam ducimus error voluptatibus. Expedita, ratione.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt dolore itaque, ratione recusandae assumenda minus! Animi quaerat autem incidunt minima, inventore ratione id, magnam ducimus error voluptatibus. Expedita, ratione.</p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
 
     <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <!-- <a id="forkme_banner" href="https://github.com/WyldResearch">View on GitHub</a> -->
 
-          <h1 id="project_title">Wyld Mesh</h1>
-          <!-- <h4 id="project_tagline">ad hoc mobile mesh networking, geolocation, and sensor r&d for commerce</h2>  -->
-        </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
 
-        <p>Wyld Mesh Mobile Ad Hoc Networks make mobile apps more available and resilient, safer, and less expensive to operate than traditional mobile connectivity options.</p>
-        <p>We're creating safe, intuitive, individually personalised, and contextually intelligent communication solutions designed to deliver the most personal mobile experience possible.</p>
-        <br/><br/>
-        <p>Please <a href="mailto:info@wyldresearch.com?subject=[WEBENQ] Website Enquiry&body=">contact us</a> to learn more about our team and our mobile ad-hoc mesh solutions. <!-- across business-problem domains and network topologies.--></p>
-        <br><br><br>
-        <p>Copyright © 2016 Wyld Research Limited - London UK</p>
+    <nav class="navbar navbar-fixed-top" id="topbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" data-scroll>
+            <img src="images/logo-white-h.png" alt="">
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <button type="button" class="close" data-toggle="collapse" data-target="#navbar"><span aria-hidden="true">
+              <i class="fa fa-times-circle"></i>
+            </span></button>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a data-scroll href="#mesh">Wyld Mesh</a></li>
+            <li><a data-scroll href="#investors">Investors</a></li>
+            <li><a data-scroll href="#careers">Careers</a></li>
+            <li><a data-scroll href="#contact">Contact Us</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-      </section>
-    </div>
-    
-    <!-- FOOTER  -->
-    <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-69838002-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+
+    <!-- MAIN -->
+
+
+    <div class="main">
+
+
+      <!-- SLIDER -->
+
+      <!-- <div class="slider">
+        <div class="slider-item">
+          <img src="https://placekitten.com/2000/900" alt="">
+        lalala
+        </div>
+        <div class="slider-item">
+          <img src="https://placekitten.com/2000/950" alt="">
+        lalala
+        </div>
+        <div class="slider-item">
+          <img src="https://placekitten.com/2000/800" alt="">
+        lalala
+        </div>
+      </div>
+
+ -->
+
+      <div class="slider">
+
+        <div class="slider-item">
+          <div class="slider-overlay center-wrap">
+            <div class="center">
+              <div class="slider-heading left">
+                <div class="container">
+                  <h1>
+                    The mesh of<br/> everything
+                  </h1>
+                  <p>
+                    Embed hybrid mesh networking into your applications in minutes, connect and communicate more freely than ever
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="vide"
+    data-vide-bg="mp4: videos/mesh3.mp4, webm: path/to/video2, ogv: path/to/video3, poster: path/to/poster"
+    data-vide-options="
+      posterType: jpg,
+      loop: true,
+      muted: false,
+      position: 0% 0%">
+          </div>
+        </div>
+<!--
+        <div class="slider-item">
+          <div class="slider-overlay center-wrap">
+            <div class="center">
+              <div class="slider-heading left">
+                <div class="container">
+                  <h1>
+                    The mesh of<br/> smart cities
+                  </h1>
+                  <p>
+                    Harness our solutions to power a host of smart city applications connected and controlled through the mesh
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="vide"
+    data-vide-bg="mp4: videos/city.mp4, webm: path/to/video2, ogv: path/to/video3, poster: path/to/poster"
+    data-vide-options="
+      posterType: jpg,
+      loop: true,
+      muted: false,
+      position: 0% 0%">
+          </div>
+        </div>
+
+        <div class="slider-item">
+          <div class="slider-overlay center-wrap">
+            <div class="center">
+              <div class="slider-heading left">
+                <div class="container">
+                  <h1>
+                    The mesh of<br/> transport
+                  </h1>
+                  <p>
+                    Our domain specific intelligence for underground metro systems delivers real-time contextual information via the mesh
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="vide"
+    data-vide-bg="mp4: videos/tubewoman.mp4, webm: path/to/video2, ogv: path/to/video3, poster: path/to/poster"
+    data-vide-options="
+      posterType: jpg,
+      loop: true,
+      muted: false,
+      position: 0% 0%">
+          </div>
+        </div> -->
+
+      </div><!-- .slider
+
+ -->
+
+      <!-- Wyld Mesh -->
+      <div class="section box" id="mesh">
+        <div class="container">
+          <div class="row" data-equal>
+            <div class="col-sm-6">
+              <h2 data-equal-watch>
+                What is Mobile Mesh Networking?
+              </h2>
+              <p class="large">
+                Mobile Mesh Networking leverages a smart devices ability to communicate directly with other nearby devices via Bluetooth and Peer-to-Peer Wi-Fi, extending the reach of this nearby network by allowing data to multi-hop between devices, providing communication to devices not directly connected.
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <h2 data-equal-watch>
+                What is Wyld Mesh?
+              </h2>
+              <p class="large">
+                Wyld Mesh is a hybrid mesh networking solution that combines mobile mesh networking with traditional OTT transport mechanisms such as Wi-Fi and mobile data. Wyld Mesh allows you to embed hybrid mesh networking into your all of your applications and devices and is designed to deliver a seamless and common experience for the user whether they are online, on the mesh or off-line.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- benefits -->
+
+      <div class="section box invert background" id="benefits"
+        style="background-image: url(images/bg-main.jpg);"
+      >
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <h2>
+                Benefits of Wyld Mesh
+              </h2>
+              <div class="flex-row benefits-grid large">
+                <div class="flex-col">
+                  <h3>Efficient</h3>
+                  <p>
+                    Delivers information efficiently over mobile data, Wi-Fi, Bluetooth and P2P Wi-Fi, reducing contention for existing services.
+                  </p>
+                </div>
+                <div class="flex-col">
+                  <h3>Scalable & Resilient</h3>
+                  <p>Able to extend reach through the formation of P2P connections that are self-forming and self-healing.</p>
+                </div>
+                <div class="flex-col">
+                  <h3>Personal & Direct</h3>
+                  <p>More direct and personal connections to drive better engagement and reducing exposure of information over the Internet.</p>
+                </div>
+                <div class="flex-col">
+                  <h3>Cost Effective</h3>
+                  <p>100% software solution that can operate without the need for hardware, sim cards or data plans.</p>
+                </div>
+                <div class="flex-col">
+                  <h3>Easy to use</h3>
+                  <p>No need for complicated log-in procedures or configuration.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SDK -->
+      <div class="section box" id="sdk">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <h2>
+                Available as a Cocoa Pod
+              </h2>
+              <p class="large">
+                Wyld Mesh is a library available as a CocoaPod that developers can quickly and easily implement it into an existing project with just 2 lines of code.
+              </p>
+              <p class="large">
+                SDKs are available, for both iOS and Android while the Wyld Services API delivers everything you need to implement Wyld Mesh and deliver real–time notifications over the mesh.
+              </p>
+              <p class="large">
+                <div class="row sdk-icons">
+                  <div class="col-xs-4 sdk-icon">
+                    <i class="fa fa-apple"></i>
+                    <p class="large">
+                      iOS SDK
+                    </p>
+                  </div>
+                  <div class="col-xs-4 sdk-icon">
+                    <i class="fa fa-android"></i>
+                    <p class="large">
+                      Android SDK
+                    </p>
+                  </div>
+                  <div class="col-xs-4 sdk-icon">
+                    <div>
+                      <img class="icon-wyld" src="images/icon-wyld-main.png" alt="">
+                    </div>
+                    <p class="large">
+                      Wyld Services API
+                    </p>
+                  </div>
+                </div>
+                <p class="large">
+                  To find out more about incorporating the Wyld Mesh Cocoa Pod<br/>
+                Contact us for more info: <a href="mailto:enquiries@wyldresearch.com">enquiries@wyldresearch.com</a>
+                </p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Investors -->
+      <div class="section box large background" id="investors"
+        style="background-image: url(images/bg-mono-h.jpg);"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <h2>Investors</h2>
+              <p>
+                Having successfully secured co-funding from Innovate UK for the development of a real-time intelligent notification system for underground metro systems and a proof of concept with London Underground we are actively seeking strategic investors to help fuel growth for Wyld Mesh.
+              </p>
+              <p>
+                With an exciting wealth of opportunities to take Wyld Mesh into we are very keen to speak to you if you have an active interest in getting involved in this  fast growing field.
+              </p>
+              <p>
+                To find out more about investment opportunities with Wyld Mesh please get in touch
+              </p>
+              <p>
+                Contact us for more info: <a href="mailto:enquiries@wyldresearch.com">enquiries@wyldresearch.com</a>
+              </p>
+              <div class="row logos">
+                <div class="col-sm-6">
+                  <img class="logo-innovate" src="images/logo-innovate.png" alt="Innovate UK">
+                </div>
+                <div class="col-sm-6">
+                  <img class="logo-underground" src="images/logo-underground.png" alt="Underground">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Careers -->
+      <div class="section box large invert background" id="careers"
+        style="background-image: url(images/bg-main.jpg);"
+      >
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <h2>
+                A career without limits
+              </h2>
+              <p>
+                Want to be part of building the future of mesh and have what it takes to work in this pioneering field?
+              </p>
+              <p>
+                Contact us for more info: <a href="mailto:">careers@wyldresearch.com</a>
+              </p>
+              <h3>
+                Available roles
+              </h3>
+              <ul>
+                <li>Android Developer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="section box large" id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <h2>
+                Say Hello
+              </h2>
+              <p>
+                If you are interested in saying hello do drop us an email or follow us on the usual places
+              </p>
+              <p>
+                Contact us for more info: <a href="mailto:enquiries@wyldresearch.com">enquiries@wyldresearch.com</a>
+              </p>
+              <p>
+                Join Us: <a href="mailto:careers@wyldresearch.com ">careers@wyldresearch.com </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- FOOTER -->
+
+
+      <footer class="footer">
+        <div class="row">
+          <div class="col-ms-7">
+            <ul class="nav nav-pills social-nav">
+              <li>
+                <a target="_blank" href="https://twitter.com/wyldresearch?lang=en-gb"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.linkedin.com/company/10146898?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10146898%2Cidx%3A1-1-1%2CtarId%3A1468955893676%2Ctas%3Awyld%20rese"><i class="fa fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a target="_blank" href="#"><i class="fa fa-google"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-ms-5">
+            <ul class="nav legal-nav">
+            <li>
+              <span data-toggle="modal" data-target="#terms">Terms and conditions</span>
+            </li>
+            <li>
+              <span data-toggle="modal" data-target="#privacy">Privacy Policy</span>
+            </li>
+          </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          Copyright © 2016 Wyld Research Ltd
+        </div>
+      </footer>
+
+    </div> <!-- /main -->
+
+
+    <!-- vendor scripts -->
+    <!-- <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script> -->
+    <script type='text/javascript' src='bower_components/jquery2/jquery.min.js'></script>
+    <script type='text/javascript' src='bower_components/smooth-scroll/dist/js/smooth-scroll.min.js'></script>
+    <script type='text/javascript' src='bower_components/vide/dist/jquery.vide.min.js'></script>
+    <script type='text/javascript' src='bower_components/jquery-easing-original/jquery.easing.min.js'></script>
+    <script type='text/javascript' src='bower_components/slick-carousel/slick/slick.min.js'></script>
+
+    <!-- <script type="text/javascript" src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script> -->
+    <script type="text/javascript" src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+
+    <!-- wyld scripts -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      // e.src='//www.google-analytics.com/analytics.js';
+      // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      // ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
   </body>
 </html>
