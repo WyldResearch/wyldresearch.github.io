@@ -181,20 +181,20 @@ $(function() {
  */
 
 function heightEqualizer(){
-  $("[data-equal]").each(function(){
-    var parent = $(this);
-    var type = parent.attr('data-equal');
-    var array = type.split(",");
+  // $("[data-equal]").each(function(){
+  //   var parent = $(this);
+  //   var type = parent.attr('data-equal');
+  //   var array = type.split(",");
 
-    $.each(array,function(i,e){
-        var H = 0;
-        parent.find( "[data-equal-watch="+e+"]" ).each(function(){
-            var h = $(this).height();
-            if( h > H ){ H = h; }
-        });
-        $("[data-equal-watch="+e+"]").height(H);
-    });
-  });
+  //   $.each(array,function(i,e){
+  //       var H = 0;
+  //       parent.find( "[data-equal-watch="+e+"]" ).each(function(){
+  //           var h = $(this).height();
+  //           if( h > H ){ H = h; }
+  //       });
+  //       $("[data-equal-watch="+e+"]").height(H);
+  //   });
+  // });
 }
 
 /*
