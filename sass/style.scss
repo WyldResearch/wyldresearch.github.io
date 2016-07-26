@@ -205,6 +205,7 @@ ul {
 	}
 
 	.navbar-toggle {
+		z-index: 200;
 		margin-right: 20px;
 
 		.icon-bar {
@@ -618,7 +619,6 @@ $flex-gutter-width: 25px;
 
 // VIDEO SLIDESHOW
 
-
 .wrapper {
     position: relative; // important!
     height: 100vh; // important!
@@ -737,18 +737,6 @@ $flex-gutter-width: 25px;
     min-height: 100%;
     height: auto;
     width: auto;
-}
-
-.video-title {
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    opacity: .5;
-    margin: 40px 0 0 0;
-    padding: 0;
-    line-height: .65;
-    font-size: 4em;
-    text-transform: uppercase;
 }
 
 /* Nav */
