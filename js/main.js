@@ -106,7 +106,7 @@ $(function() {
 
   function next() {
       isTransitioning = true;
-      
+
       // update video index, reset image opacity if starting over
       if (screenIndex === numScreens) {
           $bigImage.css('opacity',1);
@@ -118,7 +118,7 @@ $(function() {
       if (!isTouch) {
           $('#big-video-wrap').transit({'left':'-100%'},transitionDur)
       }
-          
+
       (Modernizr.csstransitions)?
           $('.wrapper').transit(
               {'left':'-'+(100*(screenIndex-1))+'%'},
@@ -140,38 +140,36 @@ $(function() {
   }
 
   function adjustImagePositioning() {
-      $bigImage.each(function(){
-          var $img = $(this),
-              img = new Image();
+    $bigImage.each(function(){
+        var $img = $(this),
+            img = new Image();
 
-          img.src = $img.attr('src');
+        img.src = $img.attr('src');
 
-          var windowWidth = $window.width(),
-              windowHeight = $window.height(),
-              r_w = windowHeight / windowWidth,
-              i_w = img.width,
-              i_h = img.height,
-              r_i = i_h / i_w,
-              new_w, new_h, new_left, new_top;
+        var windowWidth = $window.width(),
+            windowHeight = $window.height(),
+            r_w = windowHeight / windowWidth,
+            i_w = img.width,
+            i_h = img.height,
+            r_i = i_h / i_w,
+            new_w, new_h, new_left, new_top;
 
-          if( r_w > r_i ) {
-              new_h   = windowHeight;
-              new_w   = windowHeight / r_i;
-          }
-          else {
-              new_h   = windowWidth * r_i;
-              new_w   = windowWidth;
-          }
+        if( r_w > r_i ) {
+            new_h   = windowHeight;
+            new_w   = windowHeight / r_i;
+        }
+        else {
+            new_h   = windowWidth * r_i;
+            new_w   = windowWidth;
+        }
 
-          $img.css({
-              width   : new_w,
-              height  : new_h,
-              left    : ( windowWidth - new_w ) / 2,
-              top     : ( windowHeight - new_h ) / 2
-          })
-
-      });
-
+        $img.css({
+            width   : new_w,
+            height  : new_h,
+            left    : ( windowWidth - new_w ) / 2,
+            top     : ( windowHeight - new_h ) / 2
+        })
+    });
   }
 
 });
