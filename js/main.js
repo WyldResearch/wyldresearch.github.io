@@ -4,9 +4,10 @@ $(function() {
 
   var navbar = $('#topbar');
   //var navbarOffset = navbar.offset().top;
-  // console.log('menu: ', navbarOffset);
 
-  $(window).bind('scroll', function () {
+  $(window).bind('scroll', debounce(checkTopbarScroll, 20));
+
+  function checkTopbarScroll() {
     //var breakpoint = $(window).height() - 120; // 120 = navbar-height
     var breakpoint = $(window).height()/3;
 
@@ -15,27 +16,9 @@ $(function() {
     } else {
         navbar.removeClass('scrolled');
     }
-  });
-
-  // VIDE
-
-  // $('#vide1').vide({
-  //   mp4: 'path/to/video1',
-  //   webm: 'path/to/video2',
-  //   ogv: 'path/to/video3',
-  //   poster: 'path/to/poster'
-  // }, {
-  //   volume: 1,
-  //   playbackRate: 1,
-  //   muted: true,
-  //   loop: true,
-  //   autoplay: true,
-  //   position: '50% 50%', // Similar to the CSS `background-position` property.
-  //   posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
-  //   resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
-  //   bgColor: 'transparent', // Allow custom background-color for Vide div,
-  //   className: '' // Add custom CSS class to Vide div
-  // });
+  }
+  
+  checkTopbarScroll();
 
   // SMOOTH SCROLL
 
@@ -52,14 +35,9 @@ $(function() {
   // HEIGHT EQUALIZER
   
   heightEqualizer();
-
-  // $(window).on('resize', function(){
-  //   debounce(heightEqualizer, 100);
-  // })
-  
+  //$(window).on('resize', debounce(heightEqualizer, 50));
   
   // BIG VIDEO SLIDE SHOW
-  
   
   // Use Modernizr to detect for touch devices, 
   // which don't support autoplay and may have less bandwidth, 
@@ -179,20 +157,20 @@ $(function() {
  */
 
 function heightEqualizer(){
-  // $("[data-equal]").each(function(){
-  //   var parent = $(this);
-  //   var type = parent.attr('data-equal');
-  //   var array = type.split(",");
+  $("[data-equal]").each(function(){
+    var parent = $(this);
+    var type = parent.attr('data-equal');
+    var array = type.split(",");
 
-  //   $.each(array,function(i,e){
-  //       var H = 0;
-  //       parent.find( "[data-equal-watch="+e+"]" ).each(function(){
-  //           var h = $(this).height();
-  //           if( h > H ){ H = h; }
-  //       });
-  //       $("[data-equal-watch="+e+"]").height(H);
-  //   });
-  // });
+    $.each(array,function(i,e){
+        var H = 0;
+        parent.find( "[data-equal-watch="+e+"]" ).each(function(){
+            var h = $(this).height();
+            if( h > H ){ H = h; }
+        });
+        $("[data-equal-watch="+e+"]").height(H);
+    });
+  });
 }
 
 /*
