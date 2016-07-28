@@ -661,7 +661,7 @@ th {
 }
 
 .glyphicon-chevron-right:before {
-  content: "\e080";
+  content: "\e079";/* "\e080"; */
 }
 
 .glyphicon-plus-sign:before {
@@ -7251,8 +7251,8 @@ button.close {
   left: 0;
   bottom: 0;
   width: 15%;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  opacity: 1.0; /* 0.5; */
+  filter: alpha(opacity=100); /* 50); */
   font-size: 20px;
   color: #fff;
   text-align: center;
@@ -7280,8 +7280,8 @@ button.close {
   outline: 0;
   color: #fff;
   text-decoration: bold;
-  opacity:1.0; //0.9
-  filter: alpha(opacity=100); //100
+  opacity:1.0; /* 0.9 */
+  filter: alpha(opacity=100); /* 100 */
 }
 
 .carousel-control .icon-prev,
