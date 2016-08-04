@@ -14,12 +14,19 @@
 
 $body-min-width: 320px;
 
+html,
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
 body {
 	width: 100%;
     height: 100%;
     overflow-x: hidden;
     font-weight: $font-weight-base;
     min-width: $body-min-width;
+	background-color: #222;
 
     @media (max-width: $screen-xs) {
 
@@ -66,15 +73,19 @@ ul {
 }
 
 .box {
-	padding: 30px 0;
+	padding: 30px 0 30px;
 
 	@media (min-width: $screen-sm-min){
-		padding: 60px 0;
+		padding: 60px 0 60px;
 	}
 
 	@media (min-width: $screen-md-min){
 		padding: 100px 0;	
 	}
+}
+
+.touch {
+	
 }
 
 .section {
@@ -84,7 +95,8 @@ ul {
 	background-color: white;
 	
 	h2 {
-		margin-bottom: 30px;
+		margin-top: 30px;
+		margin-bottom: 20px;
 		font-weight: 600;
 		font-size: 25px;
 
@@ -157,6 +169,10 @@ ul {
 	max-width: none;
 	margin: 0 auto;
 
+	.container-fluid {
+		max-width: $screen-md-max;
+	}
+
 	.navbar-brand {
 		padding: 30px 30px;
 
@@ -213,13 +229,22 @@ ul {
 	}
 }
 
+// .collapsing {
+//     -webkit-transition: none;
+//     transition: none;
+// }
+
 .navbar-collapse {
-	
+	display: none;
+
 	.close {
 		display: none;
 	}
 
 	&.in {
+		// transition: all 0.15s easeout;
+		transition: none;
+
 		border-top: 0;
 	    box-shadow: none;
 	    background-color: $gray-darker;
@@ -280,10 +305,28 @@ ul {
     }
 }
 
+
+@keyframes slide {
+  0% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 #topbar {
+	position: absolute;
+	top: 0;
+	width: 100%;
+
 	// short navbar when page is scrolled
 	&.scrolled {
-		transition: all 0.2s linear;
+		animation: slide .25s;
+		position: fixed;
+		//transition: all 0.2s linear;
 		background: $gray-darker;
 		border-bottom: 1px solid $gray-dark;
 
@@ -310,9 +353,9 @@ ul {
 
 	    	li {
 				a {
-					// please don't change this
-					padding-top: 25px;
-					padding-bottom: 25px;
+					// don't change this
+					padding-top: 27px;
+					padding-bottom: 23px;
 				}
 			}
 		}
@@ -504,6 +547,7 @@ ul {
 
 .modal-content {
 	border-radius: 0;
+	border: 0;
 	//background-color: $gray-darker;
 
 	.modal-header {
@@ -644,7 +688,22 @@ $flex-gutter-width: 25px;
 		
 		//background-color: rgba(195,86,160,0.2);
 		//background-color: rgba(195,86,160,0.1);
+		// background-color: rgba(0,0,0,0.2);
+		// 
 		background-color: rgba(0,0,0,0.2);
+		
+		//grid
+		// $column: 1px;
+		// $gutter: 1px;
+		// $baseline: 90px;
+		// $stroke-color: black;
+		// $opacity: .5;
+
+		// background-size: ($column + $gutter) $baseline;
+		// background-image:
+  //           linear-gradient(to left, rgba($stroke-color, $opacity) 0, rgba($stroke-color, $opacity) $column, transparent $column);
+            // linear-gradient(top, transparent ($baseline - 1), rgba(#f00, 0.5) $baseline);
+		//!grid
 
 		.center-wrap {
 			width: 100%;
@@ -654,7 +713,7 @@ $flex-gutter-width: 25px;
     	.slider-heading {
 			position: relative;
 			// margin: 0 auto;
-			margin-top: 150px;
+			margin-top: 100px;
 
 			text-align: center;
 			
@@ -663,20 +722,44 @@ $flex-gutter-width: 25px;
 			}
 
 			h1 {
-				font-size: 35px;
-				line-height: 40px;
+				font-size: 30px;
+				line-height: 30px;
 				font-weight: 700;
 			}
 
 			p {
 				margin-top: 25px;
-				font-size: 18px;
+				font-size: 17px;
+				line-height: 1.3em;
 				font-weight: 300;
 			}
 
 			&.left {
 				text-align: left;
 			}
+
+			padding-left: 30px;
+    		padding-right: 30px;
+			
+			@media (min-width: $screen-xs-min){
+				padding-left: 50px;
+    			padding-right: 45px;
+
+    			p {
+    				line-height: 1.5em;
+    			}
+			}
+
+			@media (min-width: $screen-sm-min){
+				margin-top: 150px;
+				padding-left: 60px;
+    			padding-right: 60px;
+			}
+
+    		@media (min-width: $screen-md-min){
+    			padding-left: 120px;
+    			padding-right: 120px;
+    		}
 		}
 
 		@media (min-width: $screen-xs-min){
@@ -732,40 +815,102 @@ $flex-gutter-width: 25px;
 }
 
 .big-image {
+	position: absolute;
     min-width: 100%;
     min-height: 100%;
     height: auto;
     width: auto;
+    opacity: 0;
+    transition: opacity .25s linear;
+}
+
+.wrapper {
+	opacity: 0;
+	transition: opacity .25s linear;
 }
 
 /* Nav */
 
 nav.slideshow-nav {
     position: absolute;
-    right: 5%;
+    width: 100%;
     top: 45%;
     padding: 20px;
     // background: #000;
     border-radius: 50px;
-    opacity: .25;
-    cursor: pointer;
+//    opacity: .6;
+    
     z-index: 1000;
-	transition: all 0.1s linear;
+	
 
     &:hover {
-	    opacity: .4;
+	    opacity: 1;
 	}
-}
+	
+	.nav-btn {
+    	position: absolute;
+    	cursor: pointer;
+    	transition: all 0.1s linear;
+    	z-index: 1000;
+		opacity: 0.75;
 
-.next-icon {
-    display: block;
-    border-top: solid 2px #fff;
-    border-right: solid 2px #fff;
-    width: 25px;
-    height: 25px;
-    position: relative;
-    left: -5px;
-    transform: rotate(45deg);
-    color: #fff;
-    text-decoration: none;
+		&:hover {
+			opacity: 1;
+		}
+
+		&.prev-btn {
+			left: 6px;
+
+			@media (min-width: $screen-xs-min){
+				left: 12px;
+			}
+
+			@media (min-width: $screen-sm-min){
+				left: 20px;
+			}
+
+    		@media (min-width: $screen-md-min){
+    			left: 35px;
+    		}
+		}
+
+		&.next-btn {
+			right: 6px;
+
+			@media (min-width: $screen-xs-min){
+				right: 12px;
+			}
+
+			@media (min-width: $screen-sm-min){
+				right: 20px;
+			}
+
+    		@media (min-width: $screen-md-min){
+    			right: 35px;
+    		}
+		}
+	}
+
+	.nav-icon {
+		display: block;
+	    width: 25px;
+	    height: 25px;
+	    position: relative;
+	    color: #fff;
+	    text-decoration: none;
+	   	margin: 15px; //clickable area
+
+		&.prev-icon {
+		    border-top: solid 2px #fff;
+		    border-left: solid 2px #fff;
+		    transform: rotate(-45deg);
+		}
+
+		&.next-icon {
+		    display: block;
+		    border-top: solid 2px #fff;
+		    border-right: solid 2px #fff;
+		    transform: rotate(45deg);
+		}
+	}
 }

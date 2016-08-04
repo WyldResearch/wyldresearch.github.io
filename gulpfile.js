@@ -19,7 +19,7 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(plumber())
     .pipe(sass({
-        outputStyle: 'expanded' // compressed
+        outputStyle: 'compressed'
     }))
     //.pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())

@@ -21,7 +21,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700" rel="stylesheet">
     
     <script src="js/modernizr-2.5.3.min.js"></script>
   </head>
@@ -32,7 +32,9 @@
     
     <div class="wrapper">
 
-     <div class="screen" id="screen-1" data-video="videos/city.mp4">
+
+
+      <div class="screen" id="screen-1" data-video="videos/city.mp4">
         <img src="videos/city.jpg" class="big-image" />
         <div class="slider-overlay center-wrap">
           <div class="center">
@@ -75,7 +77,7 @@
             <div class="slider-heading left">
               <div class="container">
                 <h1>
-                  From Connected Cities<br/>to the Physical Web
+                  From Connected Cities<br/>to the IoT and Physical Web
                 </h1>
                 <p>
                  As the use cases for client side mesh networking grow, more people are becoming aware of other attributes of mesh networking beyond improved Connectivity. Mesh networks also improve Reliability, Productivity, Performance, Agility and Mobility. 
@@ -108,8 +110,13 @@
 
     </div>
 
-    <nav class="slideshow-nav" id="next-btn">
-        <a href="#" class="next-icon"></a>
+    <nav class="slideshow-nav">
+        <div class="nav-btn prev-btn" id="prev-btn">
+          <a href="#" class="nav-icon prev-icon"></a>   
+        </div>
+        <div class="nav-btn next-btn" id="next-btn">
+          <a href="#" class="nav-icon next-icon"></a>   
+        </div>
     </nav>
 
     <!-- MODAL: Terms & Conditions -->
@@ -197,11 +204,11 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">
               <i class="fa fa-times-circle"></i>
             </span></button>
-            <h3 class="modal-title">Cookie & Privacy Policy</h3>
+            <h3 class="modal-title">Privacy Policy</h3>
           </div>
           <div class="modal-body">
          		
-         	<h4>Cookie & Privacy Policy</h4>
+         	<h4>Privacy  & Cookie Policy</h4>
 
 		<p>A lot of modern technological services- especially those designed for mobile devices- often require access to certain bits of personal information, although the degree to which this is the case hugely varies. We don't want you to feel like we're accessing anything we shouldn't, and respect your right for certain information to remain private.</p> 
 
@@ -272,8 +279,8 @@
 
 
 
-    <nav class="navbar navbar-fixed-top" id="topbar">
-      <div class="container">
+    <nav class="navbar navbar-static-top" id="topbar">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -380,13 +387,13 @@
           <div class="row">
             <div class="col-sm-12">
               <h2>
-                The Wyld Mesh Components
+                The Wyld Components
               </h2>
               <p class="large">
-                The Wyld Mesh Client SDK is a library currently available for iOS developers, and soon to be available for Android, that can quickly and easily be implemented into an existing project with just a few lines of code. 
+                The Wyld Mesh SDK is a library currently available for iOS developers, and soon to be available for Android, that can quickly and easily be implemented into an existing project with just a few lines of code. 
               </p>
               <p class="large">
-                The Wyld Services Portal and API is a platform to manage the gateway between the Mesh and the Metro Operator's data, the security and and its operation.
+                The Wyld Services API contains a number of services that provides a broadcast service into the mesh and keeps it secure and robust.
               </p>
               <p class="large">
                 <div class="row sdk-icons">
@@ -407,7 +414,7 @@
                       <img class="icon-wyld" src="images/icon-wyld-main.png" alt="">
                     </div>
                     <p class="large">
-                      Wyld Services Portal and API
+                      Wyld Services API
                     </p>
                   </div>
                 </div>
@@ -532,13 +539,13 @@
                 <span data-toggle="modal" data-target="#terms">Terms and conditions</span>
               </li>
               <li>
-                <span data-toggle="modal" data-target="#privacy">Cookie & Privacy Policy</span>
+                <span data-toggle="modal" data-target="#privacy">Privacy Policy</span>
               </li>
-            </ul> 
+            </ul>
           </div>
         </div>
         <div class="copyright">
-          Copyright © 2016 Wyld Research Ltd. All Rights Reserved.
+          Copyright © 2016 Wyld Research Ltd
         </div>
       </footer>
 
@@ -601,7 +608,6 @@
     
     <!-- need this for collapse nav and modal to work  -->
     <script type="text/javascript" src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-
     <script type="text/javascript" src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
 

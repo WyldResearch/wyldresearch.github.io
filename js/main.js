@@ -5,11 +5,11 @@ $(function() {
   var navbar = $('#topbar');
   //var navbarOffset = navbar.offset().top;
 
-  $(window).bind('scroll', debounce(checkTopbarScroll, 20));
+  $(window).bind('scroll', debounce(checkTopbarScroll, 10));
 
   function checkTopbarScroll() {
     //var breakpoint = $(window).height() - 120; // 120 = navbar-height
-    var breakpoint = $(window).height()/3;
+    var breakpoint = 100;
 
     if ($(window).scrollTop() > breakpoint) {
         navbar.addClass('scrolled');
@@ -20,6 +20,10 @@ $(function() {
   
   checkTopbarScroll();
 
+  $('.navbar-collapse .nav a').on('click', function(){
+     $('.navbar-collapse').collapse('hide');
+  })
+
   // SMOOTH SCROLL
 
   smoothScroll.init({
@@ -27,8 +31,8 @@ $(function() {
     selectorHeader: '[data-scroll-header]', // Selector for fixed headers (must be a valid CSS selector)
     speed: 750, // Integer. How fast to complete the scroll in milliseconds
     easing: 'easeInOutCubic', // Easing pattern to use
-    offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
-    updateURL: true, // Boolean. If true, update the URL hash on scroll
+    offset: 71, // Integer. How far to offset the scrolling anchor location in pixels
+    updateURL: false,
     callback: function ( anchor, toggle ) {} // Function to run after scrolling
   });
 
@@ -37,6 +41,9 @@ $(function() {
   heightEqualizer();
   //$(window).on('resize', debounce(heightEqualizer, 50));
   
+  // DISABLE COLLAPSED MENU TRANSITION
+  $.support.transition = false;
+
   // BIG VIDEO SLIDE SHOW
   
   // Use Modernizr to detect for touch devices, 
@@ -44,7 +51,7 @@ $(function() {
   // so just give them the poster images instead
   var screenIndex = 1,
       numScreens = $('.screen').length,
-      isTransitioning = false,
+      isTransitioning = true,
       transitionDur = 1000,
       BV,
       videoPlayer,
@@ -52,9 +59,16 @@ $(function() {
       $bigImage = $('.big-image'),
       $window = $(window);
   
+  unblockTransitioning();
+
   if (!isTouch) {
       // initialize BigVideo
-      BV = new $.BigVideo({forceAutoplay:isTouch});
+      BV = new $.BigVideo({
+        forceAutoplay: isTouch,
+        controls: true,
+        doLoop: false
+      });
+
       BV.init();
       showVideo();
       
@@ -68,8 +82,20 @@ $(function() {
           .imagesLoaded(adjustImagePositioning);
       // and on window resize
       $window.on('resize', adjustImagePositioning);
+  }else{
+    // adjust for mobile
+    adjustImagePositioning();
   }
   
+  $bigImage.css('opacity', 1);
+  $('.wrapper').css('opacity', 1);
+
+  if (Modernizr.csstransitions){
+    $('.wrapper').transit(
+      {'left':'0'},
+      transitionDur);
+  }    
+
   // Next button click goes to next div
   $('#next-btn').on('click', function(e) {
       e.preventDefault();
@@ -78,8 +104,44 @@ $(function() {
       }
   });
 
+ $('#prev-btn').on('click', function(e) {
+      e.preventDefault();
+      if (!isTransitioning) {
+          prev();
+      }
+  });
+
   function showVideo() {
       BV.show($('#screen-'+screenIndex).attr('data-video'),{ambient:true});
+  }
+
+  function prev() {
+      isTransitioning = true;
+
+      // update video index, reset image opacity if starting over
+      if (screenIndex === 1) {
+          $bigImage.css('opacity', 1);
+          screenIndex = numScreens;
+      } else {
+          screenIndex--;
+      }
+      
+      $('#screen-'+screenIndex).find('.big-image').css('opacity', 1);
+
+      // var tx_pos = -(screenIndex-1)*20;
+
+      if (!isTouch) {
+          $('#big-video-wrap').transit({'left':'+100%'},transitionDur);
+          // $('#big-video-wrap').transit({'transform':'translateX('+ tx_pos +')'}, transitionDur);
+      }
+
+      (Modernizr.csstransitions)?
+          $('.wrapper').transit(
+              {'left':'-'+ (100*(screenIndex-1)) +'%'},
+              // {'transform':'translateX('+ tx_pos +')'},
+              transitionDur,
+              onTransitionComplete):
+          onTransitionComplete();
   }
 
   function next() {
@@ -87,33 +149,48 @@ $(function() {
 
       // update video index, reset image opacity if starting over
       if (screenIndex === numScreens) {
-          $bigImage.css('opacity',1);
+          $bigImage.css('opacity', 1);
           screenIndex = 1;
       } else {
           screenIndex++;
       }
       
+      $('#screen-'+screenIndex).find('.big-image').css('opacity', 1);
+
+      // var tx_pos = -(screenIndex-1)*20;
+
       if (!isTouch) {
-          $('#big-video-wrap').transit({'left':'-100%'},transitionDur)
+        $('#big-video-wrap').transit({'left':'-100%'}, transitionDur);
+        //$('#big-video-wrap').transit({'transform':'translateX('+ tx_pos +')'}, transitionDur)
       }
 
       (Modernizr.csstransitions)?
           $('.wrapper').transit(
-              {'left':'-'+(100*(screenIndex-1))+'%'},
+              {'left':'-'+ (100*(screenIndex-1)) +'%'},
+              // {'translateX':'translateX('+ tx_pos +')'},
               transitionDur,
               onTransitionComplete):
           onTransitionComplete();
   }
 
-  function onVideoLoaded() {
-      $('#screen-'+screenIndex).find('.big-image').transit({'opacity':0},500)
+  function onVideoLoaded() { 
+    $('#screen-'+screenIndex).find('.big-image').transit({'opacity': 0}, 500)
+  }
+  // $('#big-video-wrap').css('display','none');
+
+  function unblockTransitioning() {
+    // minor delay to avoid no-image bug
+      setTimeout(function(){
+        isTransitioning = false;
+      }, 350);
   }
 
   function onTransitionComplete() {
-      isTransitioning = false;
+      unblockTransitioning();
+
       if (!isTouch) {
           $('#big-video-wrap').css('left',0);
-          showVideo();
+         showVideo();
       }
   }
 
