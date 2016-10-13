@@ -17,3 +17,15 @@ onReady(function () {
     show('page', true);
     show('loading', false);
 });
+
+function preloadMyImages() 
+{
+    var imageList = [
+        "images/SmartMetroFloorplan.png"
+    ];
+    for(var i = 0; i < imageList.length; i++ ) 
+    {
+        var imageObject = new Image();
+        imageObject.src = imageList[i];
+    }
+}
