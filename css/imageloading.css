@@ -1,5 +1,12 @@
+
 #page {
     display: none;
+    position:relative;
+}
+#page img{
+    position:absolute;
+    top:0;
+    left:0;
 }
 #loading {
     display: block;
