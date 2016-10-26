@@ -2,21 +2,19 @@
 <head>
 <!-- <meta name="viewport" content="initial-scale=1"> -->
 <script type="text/javascript">
-var buffer = 20; //scroll bar buffer
-var iframe = document.getElementById('slidoapp');
-
 function pageY(elem) {
+
     return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
 }
-
+var buffer = 10; //scroll bar buffer
 function resizeIframe() {
-    var height = document.documentElement.clientHeight;
-    height -= pageY(document.getElementById('slidoapp'))+ buffer ;
+    var height = window.innerHeight || document.body.clientHeight || document.documentElement.clientHeight;
+    height -= pageY(document.getElementById('ifm'))+ buffer ;
     height = (height < 0) ? 0 : height;
     document.getElementById('ifm').style.height = height + 'px';
 }
-
 window.onresize = resizeIframe;
+window.onload = resizeIframe;
 
 }
 
