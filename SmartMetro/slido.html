@@ -1,11 +1,30 @@
 <html>
 <head>
 <!-- <meta name="viewport" content="initial-scale=1"> -->
+<script>
+var buffer = 20; //scroll bar buffer
+var iframe = document.getElementById('slidoapp');
+
+function pageY(elem) {
+    return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
+}
+
+function resizeIframe() {
+    var height = document.documentElement.clientHeight;
+    height -= pageY(document.getElementById('slidoapp'))+ buffer ;
+    height = (height < 0) ? 0 : height;
+    document.getElementById('ifm').style.height = height + 'px';
+}
+
+window.onresize = resizeIframe;
+
+}
+
+window.onresize = resizeIframe;
+</script>
 </head>
 <body>
-<div style="position:fixed;height:100%;width:100%;">
 <iframe id='slidoapp' width="600"  height="900" src='https://app.sli.do/event/kjozn0ww/ask' style="display: block;"></iframe>
 <!-- style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" -->
-</div>
 </body>
 </html>
