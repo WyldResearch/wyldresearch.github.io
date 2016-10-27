@@ -1,30 +1,25 @@
 <!DOCTYPE html> 
 <html>
 <head>
-<meta name="viewport" content="initial-scale=2.0, minimum-scale=2.0">
 <style>
-.spaceWrap { 
-  width: 4800px; 
-  height: 7200px; 
-  padding: 0; 
-  overflow: hidden; 
+.viewportWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
 }
-
-.viewPort { 
-  width: 400px; 
-  height: 600px; 
-  border: 1px solid black;
-}
-
-.viewPort {
-    -webkit-transform: scale(2.0);
-    -webkit-transform-origin: 0 0;
+.viewportWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 </style>
 </head>
 <body>
-<div class="spaceWrap">
-<iframe class="viewPort" src='https://app.sli.do/event/fcjjxrxs/ask'></iframe>
+<div class="viewportWrapper">
+<iframe width="400" height="600" src='https://app.sli.do/event/fcjjxrxs/ask'></iframe>
 </div>
 </body>
 </html>
