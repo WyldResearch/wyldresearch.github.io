@@ -662,7 +662,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <!-- wyld scripts -->
     <script type="text/javascript" src="js/main.js"></script>
 
-
+   <!-- this hides the google A/B testing URL -->
 
     <!-- Google Analytics: change UA-XXXXXXX to be your site's ID. -->
     <script>
@@ -672,6 +672,12 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
        e.src='//www.google-analytics.com/analytics.js';
        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
        ga('create','UA-81475655-1');ga('send','pageview',location.pathname);
+    </script>
+
+    <script>
+     if (location.search.indexOf('utm_expid') > -1) {
+       history.replaceState('page', 'Title', '/')
+     }
     </script>
 
   </body>

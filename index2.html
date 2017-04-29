@@ -657,5 +657,11 @@
        ga('create','UA-81475655-1');ga('send','pageview','index2');
     </script>
 
+    <script>
+     if (location.search.indexOf('utm_expid') > -1) {
+       history.replaceState('page', 'Title', '/')
+     }
+    </script>
+
   </body>
 </html>
