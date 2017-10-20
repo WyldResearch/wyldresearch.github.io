@@ -33,6 +33,8 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <!-- <link rel="stylesheet" href="bower_components/BigVideo/css/bigvideo.css"> -->
     <link rel="stylesheet" type="text/css" href="css/bigvideo.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" 
+      integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="icon"
@@ -655,7 +657,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
       <div class="section box large" id="contact">
         <div class="container">
           <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-6">
               <h2>
                 Say Hello
               </h2>
@@ -663,12 +665,27 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
                 If you are interested in saying hello, send us an email or follow us on the usual places.
               </p>
               <p>
-                Contact us for more info: <a href="mailto:enquiries@wyldtechnologies.com">enquiries@wyldtechnologies.com</a>
+                Contact us: <a href="mailto:enquiries@wyldtechnologies.com">enquiries@wyldtechnologies.com</a>
               </p>
               <p>
                 Join Us: <a href="mailto:careers@wyldtechnologies.com ">careers@wyldtechnologies.com </a>
               </p>
+              <br>
+              <div class="background" 
+                style="background-image: url(images/bg-mono-h.jpg);width:400px;padding: 4px 25px">
+                <h3>Wyld Technologies</h3>
+                Freedom Works Creative Hub<br>
+                Hove Business Centre<br>
+                Fonthill Road<br>
+                Hove BN3 1TX<br><br>
+              </div>
             </div>
+
+            <div class="col-sm-6">
+              <br>
+              <div id="mapid" style="width: 600px; height: 400px;"></div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -761,6 +778,9 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <script src='js/bigvideo.js'></script>
     <script src="js/jquery.transit.min.js"></script>
 
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+
     <script type='text/javascript' src='bower_components/smooth-scroll/dist/js/smooth-scroll.min.js'></script>
     <script type='text/javascript' src='bower_components/jquery-easing-original/jquery.easing.min.js'></script>
 
@@ -776,6 +796,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
     <!-- wyld scripts -->
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/map-leaflet.js"></script>
 
    <!-- this hides the google A/B testing URL -->
 
