@@ -19,7 +19,7 @@ L.tileLayer('https://{s}.tile.thunderforest.com/mobile-atlas/{z}/{x}/{y}.png?api
 // icon
 var WyldIcon = L.Icon.extend({
 	options: {
-		iconUrl: 'icon-wyld-main.png',
+		iconUrl: 'images/icon-wyld-main.png',
 		//shadowUrl: 'icon-wyld-shadow.png',
 		iconSize:     [38, 42],
 		shadowSize:   [60, 60],
